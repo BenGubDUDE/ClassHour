@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080914">
+<title>ClassHour — ม.5/1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070914;--panel:#101329;--line:#292d4d;--cyan:#39e9ff;--pink:#ff65c8;--yellow:#ffe66d;--purple:#a78bfa;--text:#f4f5ff;--muted:#9ba3c5;--glow:0 0 22px #39e9ff26}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);font-family:'Prompt',sans-serif;background:radial-gradient(ellipse at 12% 5%,#12234a80,transparent 34%),radial-gradient(ellipse at 90% 30%,#47184945,transparent 30%),var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(#7e8bc510 1px,transparent 1px),linear-gradient(90deg,#7e8bc510 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(to bottom,black,transparent 90%);z-index:-1}
+header{max-width:1600px;margin:auto;padding:28px 28px 18px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:46px;height:46px;border:1px solid #39e9ff9c;border-radius:14px;display:grid;place-items:center;color:var(--cyan);font:700 17px Orbitron;box-shadow:0 0 20px #39e9ff20,inset 0 0 15px #39e9ff10;transform:rotate(-4deg)}
+.brand h1{font:800 clamp(22px,3vw,32px) Orbitron;margin:0;letter-spacing:1px;background:linear-gradient(90deg,#fff,var(--cyan),var(--pink));-webkit-background-clip:text;color:transparent}.brand p{margin:4px 0 0;font-size:12px;color:var(--muted);letter-spacing:1.5px}
+.live-pill{border:1px solid #ffe66d70;background:#ffe66d0b;color:var(--yellow);border-radius:99px;padding:9px 14px;font-size:12px;letter-spacing:.8px;white-space:nowrap}.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px var(--yellow);margin-right:8px}
+.hero{max-width:1600px;margin:auto;padding:8px 28px 25px;display:flex;justify-content:space-between;align-items:end;gap:20px}.eyebrow{color:var(--cyan);font:600 11px Orbitron;letter-spacing:2px}.hero h2{font-size:clamp(25px,4vw,42px);line-height:1.2;margin:9px 0 6px}.hero h2 span{color:var(--pink);text-shadow:0 0 22px #ff65c833}.hero p{margin:0;color:var(--muted);font-size:14px}.clockbox{text-align:right;flex-shrink:0}.clock{font:700 clamp(23px,3vw,34px) Orbitron;color:var(--yellow);text-shadow:0 0 18px #ffe66d2e}.date{font-size:12px;color:var(--muted);margin-top:5px}
+main{max-width:1600px;margin:auto;padding:0 28px 40px}.legend{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px;color:var(--muted);font-size:11px}.legend span{display:inline-flex;align-items:center;gap:6px}.legend i{width:7px;height:7px;border-radius:50%;display:inline-block}.legend .c{background:var(--cyan);box-shadow:0 0 8px var(--cyan)}.legend .p{background:var(--pink);box-shadow:0 0 8px var(--pink)}.legend .y{background:var(--yellow);box-shadow:0 0 8px var(--yellow)}
+.workspace{display:grid;grid-template-columns:0fr minmax(0,1fr);gap:0;align-items:stretch;transition:grid-template-columns .45s cubic-bezier(.2,.8,.2,1),gap .45s}.workspace.has-selection{grid-template-columns:minmax(260px,310px) minmax(0,1fr);gap:18px}
+.detail{min-width:0;overflow:hidden;opacity:0;transform:translateX(-18px);pointer-events:none;transition:opacity .3s,transform .4s;position:relative}.has-selection .detail{opacity:1;transform:translateX(0);pointer-events:auto}
+.detail-card{height:100%;min-height:360px;border:1px solid #39e9ff42;border-radius:18px;padding:21px;background:linear-gradient(145deg,#131a35ed,#0c0e20f5);box-shadow:var(--glow);position:sticky;top:16px;overflow:hidden}.detail-card:before{content:"";position:absolute;width:170px;height:170px;right:-90px;top:-70px;border-radius:50%;background:var(--accent,var(--cyan));filter:blur(80px);opacity:.16}.detail-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.detail-tag{font:600 10px Orbitron;letter-spacing:1.5px;color:var(--cyan)}.close-detail{background:#ffffff08;border:1px solid #ffffff22;color:#d8ddf7;border-radius:9px;padding:5px 9px;cursor:pointer}.day-name{margin-top:25px;color:var(--muted);font-size:12px}.detail h3{font-size:clamp(26px,2.5vw,34px);margin:4px 0 4px;line-height:1.25;overflow-wrap:anywhere}.subject-code{font:600 14px Orbitron;color:var(--accent,var(--pink));letter-spacing:1px}.teacher{margin:20px 0 0;padding-top:16px;border-top:1px solid #ffffff14}.field-label{font-size:10px;letter-spacing:1.4px;color:var(--muted);margin-bottom:5px}.field-value{font-size:17px}.room-box{margin-top:17px;padding:13px 14px;border-radius:12px;background:#ffffff06;border:1px solid #ffffff13}.room-number{font:700 25px Orbitron;color:var(--yellow)}.room-desc{font-size:11px;color:var(--muted);margin-top:4px}.detail-note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:16px}.detail-hint{font-size:11px;color:#777f9e;margin-top:20px}
+.table-wrap{min-width:0;border:1px solid #343957;border-radius:18px;background:#090c1bd9;box-shadow:0 15px 50px #0004,0 0 0 1px #ffffff04;overflow:hidden;transition:box-shadow .3s}.table-head{display:flex;align-items:center;justify-content:space-between;padding:15px 17px;border-bottom:1px solid #282d4a;background:linear-gradient(90deg,#151a34,#101125)}.table-head strong{font-size:13px;letter-spacing:.5px}.table-head small{font-size:10px;color:var(--muted)}
+.table-scroll{overflow-x:auto;scrollbar-color:#454b72 #101329;scrollbar-width:thin}.timetable{width:100%;min-width:820px;border-collapse:separate;border-spacing:4px;padding:5px 6px 8px;table-layout:fixed}.timetable th{height:64px;color:#dce1fa;font-weight:500;font-size:12px;text-align:center;background:#14182d;border:1px solid #2d3354;border-radius:9px}.timetable th:first-child{width:78px;color:var(--muted);font:600 10px Orbitron;letter-spacing:1px}.period-num{font:700 16px Orbitron;color:var(--cyan);display:block}.period-time{font-size:10px;color:#8992b5;display:block;margin-top:5px;white-space:nowrap}
+.day-cell{background:#12162b;border:1px solid #303653;border-radius:9px;text-align:center;font-size:16px;font-weight:600;width:78px}.day-cell small{display:block;font:9px Orbitron;color:var(--muted);margin-top:3px}
+.subject{padding:0;vertical-align:stretch;background:#11162b;border:1px solid #303653;border-radius:10px;position:relative;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;overflow:hidden}.subject button{width:100%;height:100%;min-height:105px;padding:12px 7px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;text-align:center;position:relative}.subject button:focus-visible{outline:2px solid var(--cyan);outline-offset:-4px}.subject .teacher-mini{font-size:10px;color:#aeb7d8;line-height:1.35}.subject .code{font-size:clamp(12px,1.25vw,17px);font-weight:500;letter-spacing:.1px;color:#f4f5ff;overflow-wrap:anywhere}.subject .room{font-size:11px;color:#8994b9;margin-top:3px}.subject:hover{transform:translateY(-2px);border-color:#5b648e;background:#191e39;box-shadow:0 5px 18px #0004}.subject.selected{border-color:var(--accent,var(--cyan));background:linear-gradient(145deg,color-mix(in srgb,var(--accent,var(--cyan)) 14%,#14182d),#111426);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent,var(--cyan)) 25%,transparent),0 0 18px color-mix(in srgb,var(--accent,var(--cyan)) 14%,transparent)}.subject.selected:after{content:"";position:absolute;top:0;left:15%;right:15%;height:2px;background:var(--accent,var(--cyan));box-shadow:0 0 12px var(--accent,var(--cyan))}
+.subject.current{border-color:var(--yellow);box-shadow:inset 0 0 0 1px #ffe66d70,0 0 18px #ffe66d27;background:linear-gradient(145deg,#ffe66d1c,#111426)}.subject.current:before{content:"NOW";position:absolute;top:5px;right:5px;font:700 8px Orbitron;color:#171525;background:var(--yellow);padding:3px 4px;border-radius:4px;z-index:1}.subject.current button{padding-top:20px}.subject.current .code{color:var(--yellow)}.subject.current-day{outline:1px solid #39e9ff3d;outline-offset:-2px}.break-cell{min-height:105px;background:repeating-linear-gradient(135deg,#101329,#101329 8px,#12162b 8px,#12162b 16px);border:1px dashed #2b3150;border-radius:10px;color:#677092;text-align:center;vertical-align:middle;font-size:10px;letter-spacing:1px}.empty-cell{background:#0c1020;border:1px dashed #222844;border-radius:9px;min-height:60px}
+.statusbar{margin-top:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--muted)}.statusbar strong{color:var(--cyan);font-weight:500}.footer{text-align:center;padding:20px;color:#666f91;font-size:10px;letter-spacing:1px}
+@media(max-width:1050px){.workspace.has-selection{grid-template-columns:minmax(230px,270px) minmax(0,1fr);gap:12px}.detail-card{padding:16px}.timetable{min-width:780px}}
+@media(max-width:760px){header{padding:20px 15px 12px}.hero{padding:8px 15px 20px;align-items:start;flex-direction:column}.clockbox{text-align:left;display:flex;align-items:baseline;gap:12px}.clock{font-size:24px}.date{margin:0}main{padding:0 12px 28px}.brand p{font-size:10px}.live-pill{font-size:10px;padding:7px 10px}.workspace,.workspace.has-selection{display:flex;flex-direction:column;gap:12px}.detail{display:none;opacity:1;transform:none;overflow:visible}.has-selection .detail{display:block;order:0}.table-wrap{order:1}.detail-card{position:relative;min-height:0;padding:17px}.detail h3{font-size:26px}.teacher{margin-top:12px;padding-top:12px}.room-box{margin-top:10px}.detail-note{margin-top:10px}.detail-hint{display:none}.table-head{padding:12px}.timetable{min-width:760px}.subject button{min-height:98px}.day-cell{font-size:14px}.legend{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="brand-mark">CH</div><div><h1>ClassHour</h1><p>YOUR WEEKLY CLASS SYSTEM · M.5/1</p></div></div>
+  <div class="live-pill"><i class="live-dot"></i><span id="liveStatus">SYSTEM ONLINE</span></div>
+</header>
+<section class="hero">
+  <div><div class="eyebrow">STUDENT DASHBOARD / 2569</div><h2>ตารางเรียน <span>ม.5/1</span></h2><p>แตะวิชาเพื่อดูรายละเอียด · ระบบไฮไลต์คาบปัจจุบันให้อัตโนมัติ</p></div>
+  <div class="clockbox"><div class="clock" id="clock">--:--:--</div><div class="date" id="dateText">กำลังอ่านวันที่…</div></div>
+</section>
+<main>
+  <div class="legend"><span><i class="c"></i> CLASS DATABASE</span><span><i class="p"></i> SELECTED SUBJECT</span><span><i class="y"></i> CURRENT PERIOD</span></div>
+  <div class="workspace" id="workspace">
+    <aside class="detail" id="detailPanel" aria-live="polite">
+      <div class="detail-card" id="detailCard">
+        <div class="detail-top"><span class="detail-tag">SUBJECT DETAILS / 01</span><button class="close-detail" id="closeDetail" aria-label="ปิดรายละเอียด">✕</button></div>
+        <div class="day-name" id="detailDay">เลือกวิชาจากตารางเรียน</div>
+        <h3 id="detailName">ยังไม่ได้เลือกวิชา</h3>
+        <div class="subject-code" id="detailCode">CLASSHOUR READY</div>
+        <div class="teacher"><div class="field-label">INSTRUCTOR / ผู้สอน</div><div class="field-value" id="detailTeacher">—</div></div>
+        <div class="room-box"><div class="field-label">ROOM / สถานที่เรียน</div><div class="room-number" id="detailRoom">—</div><div class="room-desc" id="detailRoomDesc">เลือกช่องเรียนเพื่อดูข้อมูล</div></div>
+        <div class="detail-note" id="detailNote">ช่องที่มีความกว้างหลายคาบ หมายถึงเรียนวิชาเดียวกันต่อเนื่องกันมากกว่าหนึ่งคาบ</div>
+        <div class="detail-hint">TIP: CLICK ANY SUBJECT TO INSPECT</div>
+      </div>
+    </aside>
+    <section class="table-wrap">
+      <div class="table-head"><strong>▦ WEEKLY TIMETABLE</strong><small>MON — FRI / PERIOD 01 — 08</small></div>
+      <div class="table-scroll"><table class="timetable" id="timetable">
+        <thead><tr><th>DAY</th><th><span class="period-num">01</span><span class="period-time">8:30–9:25</span></th><th><span class="period-num">02</span><span class="period-time">9:25–10:20</span></th><th><span class="period-num">03</span><span class="period-time">10:20–11:15</span></th><th><span class="period-num">04</span><span class="period-time">11:15–12:10</span></th><th><span class="period-num">05</span><span class="period-time">12:10–13:05</span></th><th><span class="period-num">06</span><span class="period-time">13:05–14:00</span></th><th><span class="period-num">07</span><span class="period-time">14:00–14:55</span></th><th><span class="period-num">08</span><span class="period-time">14:55–15:50</span></th></tr></thead>
+        <tbody id="scheduleBody"></tbody>
+      </table></div>
+    </section>
+  </div>
+  <div class="statusbar"><span id="todayStatus">กำลังตรวจสอบคาบเรียน…</span><span>TIMEZONE: <strong>ASIA/BANGKOK</strong></span></div>
+</main>
+<div class="footer">CLASSHOUR © 2026 · MADE FOR M.5/1 · KEEP YOUR DAY IN SYNC</div>
+<script>
+const periods=[
+ {start:"08:30",end:"09:25"},{start:"09:25",end:"10:20"},{start:"10:20",end:"11:15"},{start:"11:15",end:"12:10"},
+ {start:"12:10",end:"13:05"},{start:"13:05",end:"14:00"},{start:"14:00",end:"14:55"},{start:"14:55",end:"15:50"}
+];
+const days=[
+ {key:1,short:"จ",name:"วันจันทร์",classes:[
+  {start:1,span:1,code:"ค32912",teacher:"ครูขวัญใจ (ว.) / ครูไหม",room:"337",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:2,span:1,code:"ศ32102",teacher:"ครูสัลภา",room:"นาฏศิลป์",subject:"นาฏศิลป์",accent:"#ff65c8"},
+  {start:3,span:1,code:"ส32102",teacher:"ครูประภัสรา",room:"232",subject:"สังคมศึกษา",accent:"#a78bfa"},
+  {start:4,span:1,code:"ค32102",teacher:"ครูจิรา",room:"332",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:6,span:2,code:"ว30261",teacher:"ครูบัณฑิต",room:"355",subject:"วิทยาศาสตร์",accent:"#ffe66d"},
+  {start:8,span:1,code:"ส32104",teacher:"ครูทักษยศ",room:"242",subject:"สังคมศึกษา",accent:"#a78bfa"}]},
+ {key:2,short:"อ",name:"วันอังคาร",classes:[
+  {start:1,span:1,code:"อ32102",teacher:"ครูอารัตน์",room:"138",subject:"ภาษาอังกฤษ",accent:"#ff65c8"},
+  {start:2,span:1,code:"ค32102",teacher:"ครูจิรา",room:"332",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:3,span:2,code:"ว30284",teacher:"ครูวิทยา / ครูภาวรณ / ครูดวงนภา",room:"คอม 2, 346",subject:"คอมพิวเตอร์",accent:"#39e9ff"},
+  {start:6,span:2,code:"ว30224",teacher:"ครูสุประภา",room:"354",subject:"วิทยาศาสตร์",accent:"#ffe66d"},
+  {start:8,span:1,code:"ท32102",teacher:"ครูดารณี",room:"141",subject:"ภาษาไทย",accent:"#a78bfa"}]},
+ {key:3,short:"พ",name:"วันพุธ",classes:[
+  {start:1,span:1,code:"ค32204",teacher:"ครูสุนธร",room:"334",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:2,span:2,code:"I30202",teacher:"ครูสุประภา",room:"354",subject:"การศึกษาค้นคว้า",accent:"#a78bfa"},
+  {start:4,span:1,code:"ว30203",teacher:"ครูดวงนภา",room:"352",subject:"วิทยาศาสตร์",accent:"#ffe66d"},
+  {start:6,span:1,code:"ส32102",teacher:"ครูประภัสรา",room:"232",subject:"สังคมศึกษา",accent:"#a78bfa"},
+  {start:7,span:1,code:"อ32203",teacher:"ครูอารยา",room:"132",subject:"ภาษาอังกฤษ พูด-เขียน",accent:"#ff65c8"}]},
+ {key:4,short:"พฤ",name:"วันพฤหัสบดี",classes:[
+  {start:1,span:2,code:"ว30243",teacher:"ครูบุญจรรยา",room:"352",subject:"วิทยาศาสตร์",accent:"#ffe66d"},
+  {start:3,span:1,code:"ค32204",teacher:"ครูสุนธร",room:"334",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:4,span:1,code:"อ32203",teacher:"ครูอารยา",room:"131",subject:"ภาษาอังกฤษ พูด-เขียน",accent:"#ff65c8"},
+  {start:6,span:2,code:"ว30212",teacher:"ครูจิรา",room:"คอม 2",subject:"คอมพิวเตอร์",accent:"#39e9ff"},
+  {start:8,span:1,code:"กิจกรรมชุมนุม",teacher:"ครูที่ปรึกษาชุมนุม",room:"ตามห้องชุมนุม",subject:"กิจกรรมชุมนุม",accent:"#a78bfa",noCode:true}]},
+ {key:5,short:"ศ",name:"วันศุกร์",classes:[
+  {start:1,span:1,code:"อ32102",teacher:"ครูอารัตน์",room:"138",subject:"ภาษาอังกฤษ",accent:"#ff65c8"},
+  {start:2,span:1,code:"ค32204",teacher:"ครูสุนธร",room:"334",subject:"คณิตศาสตร์",accent:"#39e9ff"},
+  {start:3,span:1,code:"ท32102",teacher:"ครูดารณี",room:"141",subject:"ภาษาไทย",accent:"#a78bfa"},
+  {start:4,span:1,code:"พ32102",teacher:"ครูชลิตา",room:"สนามกีฬา",subject:"สุขศึกษา / พลศึกษา",accent:"#ffe66d"},
+  {start:6,span:2,code:"ว30203",teacher:"ครูดวงนภา",room:"352",subject:"วิทยาศาสตร์",accent:"#ffe66d"},
+  {start:8,span:1,code:"ง32102",teacher:"ครูดาวใจ",room:"ประดิษฐ์ 1",subject:"การงานอาชีพ",accent:"#a78bfa"}]}
+];
+const body=document.getElementById('scheduleBody'), workspace=document.getElementById('workspace');
+let selected=null;
+function mins(t){const [h,m]=t.split(':').map(Number);return h*60+m}
+function makeSubject(day,cl){
+ const td=document.createElement('td');td.className='subject';td.colSpan=cl.span;td.dataset.day=day.key;td.dataset.start=cl.start;td.dataset.span=cl.span;td.style.setProperty('--accent',cl.accent);
+ const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`${day.name} คาบ ${cl.start}${cl.span>1?` ถึง ${cl.start+cl.span-1}`:''} ${cl.subject} ${cl.code}`);
+ b.innerHTML=`<span class="teacher-mini">${cl.teacher}</span><span class="code">${cl.noCode?'กิจกรรมชุมนุม':cl.code}</span><span class="room">${cl.room}</span>`;
+ b.addEventListener('click',()=>selectClass(day,cl,td));td.appendChild(b);return td;
+}
+function render(){
+ days.forEach(day=>{
+  const tr=document.createElement('tr');const d=document.createElement('td');d.className='day-cell';d.innerHTML=`${day.short}<small>${['MON','TUE','WED','THU','FRI'][day.key-1]}</small>`;tr.appendChild(d);
+  const byStart=new Map(day.classes.map(c=>[c.start,c]));let p=1;
+  while(p<=8){if(byStart.has(p)){const cl=byStart.get(p);tr.appendChild(makeSubject(day,cl));p+=cl.span}else{const td=document.createElement('td');td.className=p===5?'break-cell':'empty-cell';if(p===5)td.textContent='BREAK';tr.appendChild(td);p++}}
+  body.appendChild(tr);
+ });
+}
+function selectClass(day,cl,td){
+ selected={day,cl,td};document.querySelectorAll('.subject.selected').forEach(el=>el.classList.remove('selected'));td.classList.add('selected');workspace.classList.add('has-selection');
+ document.getElementById('detailDay').textContent=`${day.name} · คาบ ${cl.start}${cl.span>1?`–${cl.start+cl.span-1}`:''} · ${periods[cl.start-1].start}–${periods[cl.start+cl.span-2].end}`;
+ document.getElementById('detailName').textContent=cl.subject;document.getElementById('detailCode').textContent=cl.noCode?'NO COURSE CODE':cl.code;
+ document.getElementById('detailTeacher').textContent=cl.teacher;document.getElementById('detailRoom').textContent=cl.room;
+ document.getElementById('detailRoomDesc').textContent=cl.room==='สนามกีฬา'?'สถานที่เรียนภาคปฏิบัติ':cl.room.includes('คอม')?'ห้องคอมพิวเตอร์':cl.room==='ประดิษฐ์ 1'?'ห้องเรียนงานประดิษฐ์':cl.room==='นาฏศิลป์'?'ห้องนาฏศิลป์':cl.room==='ตามห้องชุมนุม'?'ตรวจสอบห้องจากครูที่ปรึกษา':`ห้อง ${cl.room} · ตรวจสอบอาคาร/ชั้นจากเลขห้อง`;
+ document.getElementById('detailNote').textContent=cl.span>1?`วิชานี้เรียนต่อเนื่อง ${cl.span} คาบ (${periods[cl.start-1].start}–${periods[cl.start+cl.span-2].end}) แสดงเป็นช่องเดียวตามตารางต้นฉบับ`:'กดวิชาอื่นในตารางเพื่อเปลี่ยนรายละเอียดได้ทันที';
+ document.getElementById('detailCard').style.setProperty('--accent',cl.accent);
+ if(innerWidth<=760)document.getElementById('detailPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.getElementById('closeDetail').addEventListener('click',()=>{workspace.classList.remove('has-selection');if(selected)selected.td.classList.remove('selected');selected=null});
+function getBangkokParts(){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(new Date());return Object.fromEntries(parts.map(p=>[p.type,p.value]))}
+function tick(){
+ const now=new Date(),p=getBangkokParts(),weekdayMap={Mon:1,Tue:2,Wed:3,Thu:4,Fri:5};
+ document.getElementById('clock').textContent=`${p.hour}:${p.minute}:${p.second}`;
+ document.getElementById('dateText').textContent=new Intl.DateTimeFormat('th-TH',{timeZone:'Asia/Bangkok',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now);
+ const dayNum=weekdayMap[p.weekday],currentMins=Number(p.hour)*60+Number(p.minute);document.querySelectorAll('.subject').forEach(el=>{el.classList.remove('current','current-day')});
+ let current=null;
+ if(dayNum){const day=days.find(d=>d.key===dayNum);day.classes.forEach(cl=>{const start=mins(periods[cl.start-1].start),end=mins(periods[cl.start+cl.span-2].end);const el=body.querySelector(`.subject[data-day="${dayNum}"][data-start="${cl.start}"]`);if(el){if(currentMins>=start&&currentMins<end){el.classList.add('current');current={day,cl,el}}}});
+  const row=body.querySelectorAll('tr')[dayNum-1];if(row)row.querySelector('.day-cell').style.borderColor='#39e9ff8a';
+ }
+ const status=document.getElementById('todayStatus'),live=document.getElementById('liveStatus');
+ if(current){status.innerHTML=`กำลังเรียน: <strong>${current.cl.subject} (${current.cl.noCode?'กิจกรรมชุมนุม':current.cl.code})</strong> · ${current.cl.room}`;live.textContent='CLASS IN SESSION';
+  if(!selected||selected.day.key!==current.day.key||selected.cl.start!==current.cl.start){/* highlight only; user selection remains untouched */}
+ }else{const isWeekend=!dayNum;const upcoming=dayNum?days.find(d=>d.key===dayNum).classes.find(c=>mins(periods[c.start-1].start)>currentMins):null;
+  status.innerHTML=isWeekend?'วันนี้ไม่มีคาบเรียนตามตารางวันจันทร์–ศุกร์':upcoming?`คาบถัดไป: <strong>${upcoming.subject} (${upcoming.noCode?'กิจกรรมชุมนุม':upcoming.code})</strong> · ${periods[upcoming.start-1].start}`:dayNum?'หมดคาบเรียนแล้วสำหรับวันนี้':'นอกเวลาเรียนตามตาราง';
+  live.textContent=dayNum&&!upcoming?'SCHOOL DAY COMPLETE':'SYSTEM ONLINE';
+ }
+}
+render();tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
